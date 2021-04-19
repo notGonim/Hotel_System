@@ -1,13 +1,22 @@
 import express from 'express'
 import { errors } from './middleware/errors.js'
- 
+import bodyParser from 'body-parser'
 
 
 
-// initialize the man express func  to use to build RESTAPI 
+
+
+
 export const app = express()
 
+
 app.use(express.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+// app.use(cookieParser())
+
+
+
+
 
 
 //to handle all the routes 
