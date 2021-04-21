@@ -25,9 +25,12 @@ const userSchema = new mongoose.Schema({
         minlength: [6, 'Your password must be longer than 6 characters'],
         select: false
     },
+    stripe_account_id: '',
+    stripe_seller: {},
+    stripeSession: {}
 
 
-})
+}, { timestamps: true })
 
 const User = mongoose.model('Users', userSchema)
-export default User 
+export default User
