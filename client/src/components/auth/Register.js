@@ -1,14 +1,18 @@
 import React, { useState } from 'react'
 
+
+
+
 export const Register = () => {
 
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const onHandleSubmit = (e) => {
+    const onHandleSubmit = async (e) => {
         e.preventDefault()
-        console.log(`Username : ${username} ---${email} ---${password} ---  `)
+
+
     }
 
     return (
