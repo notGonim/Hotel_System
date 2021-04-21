@@ -1,6 +1,7 @@
 import express from 'express'
 import { errors } from './middleware/errors.js'
 import bodyParser from 'body-parser'
+import { UserRouter } from './routes/user-routes.js'
 
 
 
@@ -20,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 
 //to handle all the routes 
-
+app.use('/api',UserRouter)
 
 
 
