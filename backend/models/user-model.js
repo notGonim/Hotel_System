@@ -8,7 +8,7 @@ import crypto from 'crypto'
 const userSchema = new mongoose.Schema({
 
     username: {
-        type: string,
+        type: String,
         required: [true, 'Please enter your username'],
         maxLength: [30, 'Your name cannot exceed 30 characters'],
         unique: [true, 'Username exists in our databases please enter a new username']
@@ -30,4 +30,4 @@ const userSchema = new mongoose.Schema({
 })
 
 const User = mongoose.model('Users', userSchema)
-export default User
+export default User 
