@@ -14,26 +14,19 @@ export const Register = () => {
 
 
     const dispatch = useDispatch();
-    const history = useHistory()    
+    const history = useHistory()
     const { isAuthenticated, error, loading } = useSelector(state => state.auth);
-
     useEffect(() => {
 
         if (isAuthenticated) {
             history.push('/')
         }
-
-        if (error) {
-            dispatch(clearErrors());
-        }
-
     }, [dispatch, isAuthenticated, error, history])
 
 
     const onHandleSubmit = async (e) => {
         e.preventDefault()
         const userData = { username, email, password }
-        console.log(userData)
         dispatch(register(userData))
 
     }
@@ -53,7 +46,12 @@ export const Register = () => {
                             <input type="email" value={email} className="form-control" placeholder="Write Your Email" onChange={(e) => setEmail(e.target.value)} />
                             <label >Password : </label>
                             <input type="password" value={password} className="form-control" placeholder="Write Your Password " onChange={(e) => setPassword(e.target.value)} />
+                            {error &&
+                                <div class="alert alert-danger m-1"  >{error}</div>
+                            }
+
                             <button className="btn btn-outline-primary mt-3" onClick={onHandleSubmit}>Register</button>
+
                         </div>
                     </div>
                 </div>

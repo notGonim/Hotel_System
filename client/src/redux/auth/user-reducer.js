@@ -5,10 +5,6 @@ const INITIAL_STATE = {
 }
 
 
-
-
-
-
 const UserReducer = (state = INITIAL_STATE, action) => {
 
 
@@ -36,8 +32,8 @@ const UserReducer = (state = INITIAL_STATE, action) => {
             };
         case 'LOGIN_FAIL':
         case 'REGISTER_FAIL':
-
             return {
+
                 ...state,
                 loading: false,
                 isAuthenticated: false,
