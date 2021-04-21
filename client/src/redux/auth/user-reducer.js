@@ -10,11 +10,7 @@ const INITIAL_STATE = {
 
 
 const UserReducer = (state = INITIAL_STATE, action) => {
-    switch (action.type) {
-
-
-
-    }
+    
 }
 
 
