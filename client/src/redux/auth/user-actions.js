@@ -4,6 +4,8 @@ import axios from 'axios'
 export const register = (userData) => async (dispatch) => {
 
     try {
+        console.log(userData)
+
 
         dispatch({ type: "REGISTER_REQUEST" })
 
@@ -14,6 +16,7 @@ export const register = (userData) => async (dispatch) => {
         }
 
         const { data } = await axios.post('/api/register', userData, config)
+        console.log(data)
 
         dispatch({
             type: "REGISTER_SUCCESS",
@@ -23,7 +26,7 @@ export const register = (userData) => async (dispatch) => {
     } catch (e) {
         dispatch({
             type: "REGISTER_FAIL",
-            payload: err.response.data.message
+            payload: e.response.data.message
         })
     }
 }

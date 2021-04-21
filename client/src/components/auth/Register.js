@@ -1,5 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { clearErrors, register } from '../../redux/auth/user-actions'
 
+import { useHistory } from "react-router-dom";
 
 
 
@@ -9,9 +12,29 @@ export const Register = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+
+    const dispatch = useDispatch();
+    const history = useHistory()    
+    const { isAuthenticated, error, loading } = useSelector(state => state.auth);
+
+    useEffect(() => {
+
+        if (isAuthenticated) {
+            history.push('/')
+        }
+
+        if (error) {
+            dispatch(clearErrors());
+        }
+
+    }, [dispatch, isAuthenticated, error, history])
+
+
     const onHandleSubmit = async (e) => {
         e.preventDefault()
-
+        const userData = { username, email, password }
+        console.log(userData)
+        dispatch(register(userData))
 
     }
 

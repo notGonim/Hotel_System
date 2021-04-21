@@ -24,8 +24,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5000",
-
+  "proxy": "http://localhost:5000" 
+,
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -34,15 +34,16 @@
   },
 
   "browserslist": {
-    "production": [
+    "production": [ 
       ">0.2%",
       "not dead",
       "not op_mini all"
     ],
-    "development": [
+    "development": [  
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
     ]
   }
+
 }
