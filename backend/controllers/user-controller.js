@@ -42,6 +42,8 @@ export const login = asyncError(async (req, res, next) => {
     if (!isPasswordMatch)
         return next(asyncError('User not found Please enter Valid Email and Password', 401))
 
-    //sending token    
+    //sending token 
+    const token = user.getJwtToken()
+    sendToken(user, 200, res)
 
 })
