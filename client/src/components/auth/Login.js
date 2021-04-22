@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from "react-router-dom";
+import { login } from '../../redux/auth/user-actions';
 
 
 
@@ -13,8 +14,18 @@ export const Login = () => {
     const dispatch = useDispatch();
     const history = useHistory()
 
+    const { isAuthenticated, error, loading } = useSelector(state => state.auth);
+    useEffect(() => {
+
+        if (isAuthenticated) {
+            history.push('/')
+        }
+    }, [dispatch, isAuthenticated, error, history])
+
+
     const onHandleLogin = (e) => {
         e.preventDefault()
+        dispatch(login(email,password))
 
     }
 
@@ -32,9 +43,9 @@ export const Login = () => {
                             <input type="email" value={email} className="form-control" placeholder="Write Your Email" onChange={(e) => setEmail(e.target.value)} />
                             <label >Password : </label>
                             <input type="password" value={password} className="form-control" placeholder="Write Your Password " onChange={(e) => setPassword(e.target.value)} />
-                            { /*error &&
+                            {error &&
                                 <div class="alert alert-danger m-1"  >{error}</div>
-  */                      }
+                            }
 
                             <button className="btn btn-outline-success mt-3" onClick={onHandleLogin}>Login</button>
 
