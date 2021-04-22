@@ -1,6 +1,7 @@
 import { asyncError } from "../middleware/catchAsyncErrors.js"
 import { ErrorHandler } from "../utils/errorHandler.js";
 import User from "../models/user-model.js";
+import { sendToken } from "../utils/jwtTokens.js";
 
 
 
