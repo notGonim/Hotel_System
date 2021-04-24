@@ -9,9 +9,30 @@ export const newHotel = asyncError(async (req, res, next) => {
     const { name, email, rooms } = req.body
     const hotel = await Hotels.create({ name, email, rooms })
 
-    res.status(200).json({
+    res.status(201).json({
         success: true,
         hotel
     })
+
+})
+
+
+export const allHotels = asyncError(async (req, res, next) => {
+
+    const hotels = await Hotels.find()
+
+    let numberOfrooms = 0
+    hotels.forEach(hotel => {
+        numberOfrooms += hotel.rooms
+    })
+
+
+    res.status(201).json({
+        success: true,
+        numberOfrooms,
+        hotels
+    })
+
+
 
 })
