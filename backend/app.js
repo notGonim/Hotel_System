@@ -4,6 +4,7 @@ import { UserRouter } from './routes/user-routes.js'
 import bodyParser from 'body-parser'
 
 import cookieParser from 'cookie-parser'
+import { HotelsRouter } from './routes/hotel-routes.js'
 
 
 
@@ -21,7 +22,8 @@ app.use(cookieParser())
 
 
 //to handle all the routes 
-app.use('/api',UserRouter)
+app.use('/api', UserRouter)
+app.use('/api', HotelsRouter)
 
 
 

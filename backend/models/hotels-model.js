@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import validator from 'validator'
 
 
 const hotelSchema = new mongoose.Schema(
@@ -16,7 +17,7 @@ const hotelSchema = new mongoose.Schema(
             validate: [validator.isEmail, 'Please enter valid email address']
         },
         rooms: {
-            type: number,
+            type: Number,
             required: [true, 'Please enter Hotel number of rooms '],
         }
 
