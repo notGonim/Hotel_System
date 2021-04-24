@@ -22,17 +22,28 @@ export const allHotels = asyncError(async (req, res, next) => {
     const hotels = await Hotels.find()
 
     let numberOfrooms = 0
+
     hotels.forEach(hotel => {
         numberOfrooms += hotel.rooms
     })
-
 
     res.status(201).json({
         success: true,
         numberOfrooms,
         hotels
     })
+})
 
+export const deleteHotel = asyncError(async (req, res, next) => {
 
+    const hotel = await Hotels.findById(req.params.id)
+    if (!hotel) {
+        return next(new ErrorHandler('No hotel Exists'))
+    }
+    await hotel.remove()
+
+    res.status(201).json({
+        success: true
+    })
 
 })
