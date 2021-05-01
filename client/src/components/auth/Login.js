@@ -36,7 +36,7 @@ export const Login = () => {
                 <h1> Register</h1>
             </div>
             <div className="container">
-                <div className="row">
+                <div className="row">   
                     <div className="col-md-6 offset-md-3">
                         <div className="form-group mb-3">
                             <label >Email : </label>
