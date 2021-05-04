@@ -2,11 +2,13 @@ import React from 'react'
 import { CarsorWidget } from './layout/CarsorWidget'
 import { Footer } from './layout/Footer'
 import { HomeWidget } from './layout/HomeWidget'
+import { Nav } from './layout/Nav'
 
 export const HomePage = () => {
 
     return (
         <>
+            <Nav />
             <div class="container mt-5">
                 <HomeWidget title="BEST HOTEL SYSTEM" parag="Our users choose from more than 1000 Hotels Available ..." img={process.env.PUBLIC_URL + '/img/home1.png'} />
                 <br />

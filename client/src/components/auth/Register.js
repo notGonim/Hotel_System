@@ -19,7 +19,7 @@ export const Register = () => {
     useEffect(() => {
 
         if (isAuthenticated) {
-            history.push('/')
+            history.push('/home')
         }
     }, [dispatch, isAuthenticated, error, history])
 
