@@ -2,6 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export const MainHeader = () => {
+
+
+    const loggedOut = () => {
+
+    }
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <Link to="/home" className="navbar-brand" >HotelMe</Link>
@@ -20,7 +26,13 @@ export const MainHeader = () => {
                     <li className="nav-item active">
                         <Link to="/profile" className="nav-link" >Profile <span className="sr-only">(current)</span></Link>
                     </li>
+                    <li className="nav-item active">
+                        <Link to="/add" className="nav-link" >Add Hotel <span className="sr-only">(current)</span></Link>
+                    </li>
                 </ul>
+                <div className="">
+                    <Link to="/" className="btn btn-outline-danger mr-1" onClick={loggedOut}>Log Out</Link>
+                </div>
 
             </div>
         </nav>

@@ -16,7 +16,6 @@ export const HomePage = () => {
                 <br />
                 <HomeWidget title="Many Countries" parag="We have many hotels in many countries To enjoy your vacation in and get new Experience" img={process.env.PUBLIC_URL + '/img/home2.png'} />
             </div>
-            <Footer />
         </>
     )
 }

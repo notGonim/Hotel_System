@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { MainHeader } from '../layout/header'
+
+
 
 export const AddHotel = () => {
 
@@ -11,6 +14,7 @@ export const AddHotel = () => {
 
     return (
         <>
+            <MainHeader />
             <div className="container-fluid bg-secondary p-5 text-center">
                 <h1> Add Hotel</h1>
             </div>
@@ -35,6 +39,7 @@ export const AddHotel = () => {
                     </div>
                 </div>
             </div>
+            
         </>
     )
 }

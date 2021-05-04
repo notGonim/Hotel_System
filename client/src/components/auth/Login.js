@@ -26,19 +26,19 @@ export const Login = () => {
 
     const onHandleLogin = (e) => {
         e.preventDefault()
-        dispatch(login(email,password))
+        dispatch(login(email, password))
 
     }
 
     return (
 
         <>
-        <Nav/>
+            <Nav />
             <div className="container-fluid bg-secondary p-5 text-center">
-                <h1> Register</h1>
+                <h1> Login</h1>
             </div>
-            <div className="container">
-                <div className="row">   
+            <div className="container ">
+                <div className="row m-5" >
                     <div className="col-md-6 offset-md-3">
                         <div className="form-group mb-3">
                             <label >Email : </label>
@@ -55,6 +55,7 @@ export const Login = () => {
                     </div>
                 </div>
             </div>
+        
         </>
 
 

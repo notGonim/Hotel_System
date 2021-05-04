@@ -1,10 +1,12 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { AddHotel } from "./components/admin/AddHotel";
 import { Profile } from "./components/admin/Profile";
 import { Login } from "./components/auth/Login";
 import { Register } from "./components/auth/Register";
 import { Home } from "./components/booking/Home";
 import { HomePage } from "./components/HomePage";
 import { Hotel } from "./components/hotels/Hotel";
+import { Footer } from "./components/layout/Footer";
 import { Nav } from "./components/layout/Nav";
 import { ProtectedRoutes } from "./components/routes/ProtectedRoutes";
 
@@ -21,8 +23,9 @@ function App() {
         <Route path='/register' exact component={Register} />
         <ProtectedRoutes path='/home' exact component={Hotel} />
         <ProtectedRoutes path='/profile' exact component={Profile} />
-
+        <ProtectedRoutes path='/add' exact component={AddHotel} />
       </Switch>
+      <Footer />
     </Router>
 
 

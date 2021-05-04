@@ -8,15 +8,16 @@ export const Hotel = () => {
         <>
             <MainHeader />
             <div className="container p-3">
-                <HotelCard />
-                <HotelCard />
-                <HotelCard />
-                <HotelCard />
-                <HotelCard />
-                <HotelCard />
+
+                <div className="row ">
+                    <div className="col-sm mb-3">
+                        <HotelCard />
+                    </div>
+
+
+                </div>
             </div>
             <br />
-            <Footer />
         </>
     )
 }
