@@ -7,6 +7,8 @@ export const AddHotel = () => {
 
 
     const [hotelName, setHotelName] = useState('')
+
+    const [location, setLocation] = useState('')
     const [rooms, setRooms] = useState(0)
     const [url, setUrl] = useState('')
 
@@ -24,6 +26,8 @@ export const AddHotel = () => {
                         <div className="form-group mb-3">
                             <label >Hotel Name : </label>
                             <input type="text" value={hotelName} className="form-control" placeholder="Add Hotel`s name" onChange={(e) => setHotelName(e.target.value)} />
+                            <label >Location : </label>
+                            <input type="text" value={location} className="form-control" placeholder="Add Hotel`s name" onChange={(e) => setLocation(e.target.value)} />
                             <label >Number Of Rooms Available : </label>
                             <input type="number" value={rooms} className="form-control" placeholder="# of rooms available " onChange={(e) => setRooms(e.target.value)} />
                             <label >Pic URL  : </label>
