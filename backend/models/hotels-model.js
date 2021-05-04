@@ -10,11 +10,15 @@ const hotelSchema = new mongoose.Schema(
             maxLength: [30, 'Hotel name cannot exceed 30 characters'],
             unique: [true, 'Hotels name exists in our databases please enter a new username']
         },
-        email: {
+        location: {
             type: String,
-            required: [true, 'Please enter Hotel email'],
+            required: [true, 'Please enter Hotel location'],
             unique: true,
-            validate: [validator.isEmail, 'Please enter valid email address']
+        },
+        url: {
+            type: String,
+            required: [true, 'Please enter Hotel pic url'],
+            unique: true,
         },
         rooms: {
             type: Number,
