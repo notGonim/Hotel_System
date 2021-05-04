@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { clearErrors, register } from '../../redux/auth/user-actions'
 
 import { useHistory } from "react-router-dom";
+import { Nav } from '../layout/Nav';
 
 
 
@@ -33,6 +34,8 @@ export const Register = () => {
 
     return (
         <>
+                <Nav/>
+
             <div className="container-fluid bg-secondary p-5 text-center">
                 <h1> Register</h1>
             </div>

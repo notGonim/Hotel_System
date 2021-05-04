@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from "react-router-dom";
 import { login } from '../../redux/auth/user-actions';
+import { Nav } from '../layout/Nav';
 
 
 
@@ -32,6 +33,7 @@ export const Login = () => {
     return (
 
         <>
+        <Nav/>
             <div className="container-fluid bg-secondary p-5 text-center">
                 <h1> Register</h1>
             </div>

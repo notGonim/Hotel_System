@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Profile } from "./components/admin/Profile";
 import { Login } from "./components/auth/Login";
 import { Register } from "./components/auth/Register";
 import { Home } from "./components/booking/Home";
@@ -19,6 +20,8 @@ function App() {
         <Route path='/login' exact component={Login} />
         <Route path='/register' exact component={Register} />
         <ProtectedRoutes path='/home' exact component={Hotel} />
+        <ProtectedRoutes path='/profile' exact component={Profile} />
+
       </Switch>
     </Router>
 

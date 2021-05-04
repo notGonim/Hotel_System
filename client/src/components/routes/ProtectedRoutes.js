@@ -19,7 +19,6 @@ export const ProtectedRoutes = ({ component: Component, ...rest }) => {
                             return <Redirect to='/login' />
                         }
 
-
                         return <Component {...props} />
                     }}
                 />}
