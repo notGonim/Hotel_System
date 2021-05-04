@@ -55,7 +55,19 @@ export const login = (email, password) => async (dispatch) => {
     }
 }
 
-
+export const logout = () => async dispatch => {
+    try {
+        await axios.get('/api/logout')
+        dispatch({
+            type: "LOGOUT_SUCCESS",
+        })
+    } catch (err) {
+        dispatch({
+            type: "LOGIN_FAIL",
+            payload: err.response.data.error.message
+        })
+    }
+}
 //clearing errors not gunna use it coz i am gonna handle errors 
 
 export const clearErrors = () => async (dispatch) => {

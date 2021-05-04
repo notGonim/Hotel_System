@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { logout } from '../../redux/auth/user-actions'
+import { useDispatch} from 'react-redux'
 
 export const MainHeader = () => {
 
-
+    const dispatch = useDispatch()
     const loggedOut = () => {
-
+        dispatch(logout())
     }
 
     return (
