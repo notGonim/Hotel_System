@@ -33,3 +33,6 @@ const HotelReducer = (state = INITIAL_STATE, actions) => {
             return state;
     }
 }
+
+
+export default HotelReducer
