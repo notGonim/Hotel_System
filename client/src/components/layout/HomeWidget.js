@@ -4,7 +4,7 @@ export const HomeWidget = ({ title, parag, img }) => {
     return (
         <div>
             <div class="row m-5">
-                <div class="col-6 ">
+                <div class="col-sm">
                     <h2 className="display-4">{title}</h2>
                     <p>{parag}</p>
                 </div>
