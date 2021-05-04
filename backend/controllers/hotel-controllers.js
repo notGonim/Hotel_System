@@ -6,8 +6,8 @@ import { ErrorHandler } from "../utils/errorHandler.js";
 
 export const newHotel = asyncError(async (req, res, next) => {
 
-    const { name, email, rooms } = req.body
-    const hotel = await Hotels.create({ name, email, rooms })
+    const { name, location, url, rooms } = req.body
+    const hotel = await Hotels.create({ name, location, url, rooms })
 
     res.status(201).json({
         success: true,
