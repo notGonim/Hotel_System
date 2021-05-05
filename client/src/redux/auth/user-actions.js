@@ -68,6 +68,54 @@ export const logout = () => async dispatch => {
         })
     }
 }
+//user edit profile 
+export const editProfile = (userData) => async (dispatch) => {
+    try {
+
+        dispatch({
+            type: "UPDATE_PROFILE_REQUEST"
+        })
+
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+
+        const { data } = await axios.put('/api/edit', userData, config)
+        dispatch({
+            type: "UPDATE_PROFILE_SUCCESS",
+            payload: data.success
+        })
+
+    } catch (err) {
+        dispatch({
+            type: "UPDATE_PROFILE_FAIL",
+            payload: err.response.data.message
+        })
+    }
+}
+
+export const loadUser = () => async (dispatch) => {
+    try {
+        dispatch({ type: "LOAD_USER_REQUEST" })
+
+
+        const { data } = await axios.get('/api/me')
+        dispatch({
+            type: "LOAD_USER_SUCCESS",
+            payload: data.user
+        })
+
+    } catch (err) {
+        dispatch({
+            type: "LOAD_USER_FAIL",
+            payload: err.response.data.message
+        })
+    }
+}
+
+
 //clearing errors not gunna use it coz i am gonna handle errors 
 
 export const clearErrors = () => async (dispatch) => {
