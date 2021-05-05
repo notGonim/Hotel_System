@@ -23,7 +23,7 @@ export const userRegister = asyncError(async (req, res, next) => {
 export const editUserData = asyncError(async (req, res, next) => {
 
     const newUserData = {
-        name: req.body.name,
+        username: req.body.username,
         email: req.body.email
     }
     const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
@@ -35,6 +35,16 @@ export const editUserData = asyncError(async (req, res, next) => {
         success: true
     })
 })
+
+//getting currently logged in user details  -> api/me
+export const getUserProfile = asyncError(async (req, res, next) => {
+    const user = await User.findById(req.user.id)
+    res.status(200).json({
+        success: true,
+        user
+    })
+})
+
 
 //handle user login       api/login
 export const login = asyncError(async (req, res, next) => {
