@@ -7,30 +7,31 @@ import { Loader } from '../layout/Loader'
 export const Profile = () => {
 
 
-    const { loading, isAuthenticated, user, error } = useSelector(state => state.auth)
-    useEffect(() => {
-        console.log(user.email)
-    })
-
+    const { loading, user, error } = useSelector(state => state.auth)
+    
     return (
         <>
             <MainHeader />
-            <div className="container mt-3 mb-3">
-                <h1 className="dispay-2">Your Info</h1>
-                <div className="container p-3">
-                    <h2 className="dispaly-1">Username  </h2>
-                    <h4 className="dispaly-2 p-2">{ user.username } </h4>
-                    <hr />
-                    <h2 className="dispaly-3">Email  </h2>
-                    <h4 className="dispaly-4 p-2">{user.email }</h4>
-                    <br />
-                    <br />
-                    <Link to="" >Edit Your Info</Link>
-                    <br />
-                    <br />
+            {loading ? <Loader />
+                :
+                <div className="container mt-3 mb-3">
+                    <h1 className="dispay-2">Your Info</h1>
+                    <div className="container p-3">
+                        <h2 className="dispaly-1">Username  </h2>
+                        <h4 className="dispaly-2 p-2">{user.username} </h4>
+                        <hr />
+                        <h2 className="dispaly-3">Email  </h2>
+                        <h4 className="dispaly-4 p-2">{user.email}</h4>
+                        <br />
+                        <br />
+                        <Link to="/editprofile" >Edit Your Info</Link>
+                        <br />
+                        <br />
 
+                    </div>
                 </div>
-            </div>
-        </>
+
+
+            }</>
     )
 }

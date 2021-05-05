@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AddHotel } from "./components/admin/AddHotel";
+import { EditProfile } from "./components/admin/EditProfile";
 import { Profile } from "./components/admin/Profile";
 import { Login } from "./components/auth/Login";
 import { Register } from "./components/auth/Register";
@@ -24,6 +25,7 @@ function App() {
         <ProtectedRoutes path='/home' exact component={Hotel} />
         <ProtectedRoutes path='/profile' exact component={Profile} />
         <ProtectedRoutes path='/add' exact component={AddHotel} />
+        <ProtectedRoutes path='/editprofile' exact component={EditProfile} />
       </Switch>
       <Footer />
     </Router>
