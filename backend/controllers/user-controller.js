@@ -19,7 +19,22 @@ export const userRegister = asyncError(async (req, res, next) => {
     })
 
 })
+//edit user data   api/edit 
+export const editUserData = asyncError(async (req, res, next) => {
 
+    const newUserData = {
+        name: req.body.name,
+        email: req.body.email
+    }
+    const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
+        new: true,
+        runValidators: true,
+        useFindAndModify: false
+    })
+    res.status(200).json({
+        success: true
+    })
+})
 
 //handle user login       api/login
 export const login = asyncError(async (req, res, next) => {
