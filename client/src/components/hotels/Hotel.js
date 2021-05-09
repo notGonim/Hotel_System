@@ -26,7 +26,8 @@ export const Hotel = () => {
 
                     <div className="row ">
                         <div className="col-sm mb-3">
-                            <HotelCard />
+                            <HotelCard id="123" key="123" title="Testing title" img="https://badianhotel.com/wp-content/uploads/2020/08/baglioni-hotel-london.jpg" desc="Some quick example text to build on the card title and make up the bulk of the card's content."
+                            />
                         </div>
                     </div>
                 </div>

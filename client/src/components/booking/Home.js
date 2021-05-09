@@ -6,6 +6,7 @@ import { Confirmed } from '../layout/checked'
 export const Home = () => {
     return (
         <div className="container-fluid  p-1">
+            
         </div>
     )
 }

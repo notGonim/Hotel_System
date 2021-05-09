@@ -4,6 +4,7 @@ import { EditProfile } from "./components/admin/EditProfile";
 import { Profile } from "./components/admin/Profile";
 import { Login } from "./components/auth/Login";
 import { Register } from "./components/auth/Register";
+import { book } from "./components/booking/book/book";
 import { Home } from "./components/booking/Home";
 import { HomePage } from "./components/HomePage";
 import { Hotel } from "./components/hotels/Hotel";
@@ -26,6 +27,8 @@ function App() {
         <ProtectedRoutes path='/profile' exact component={Profile} />
         <ProtectedRoutes path='/add' exact component={AddHotel} />
         <ProtectedRoutes path='/editprofile' exact component={EditProfile} />
+        <ProtectedRoutes path='/book/:id' exact component={book} />
+
       </Switch>
       <Footer />
     </Router>
