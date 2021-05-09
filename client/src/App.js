@@ -9,6 +9,7 @@ import { Home } from "./components/booking/Home";
 import { HomePage } from "./components/HomePage";
 import { Hotel } from "./components/hotels/Hotel";
 import { NotFound } from "./components/layout/404";
+import { Done } from "./components/layout/Done";
 import { Footer } from "./components/layout/Footer";
 import { Nav } from "./components/layout/Nav";
 import { ProtectedRoutes } from "./components/routes/ProtectedRoutes";
@@ -29,6 +30,8 @@ function App() {
         <ProtectedRoutes path='/add' exact component={AddHotel} />
         <ProtectedRoutes path='/editprofile' exact component={EditProfile} />
         <ProtectedRoutes path='/book/:id' exact component={book} />
+        <ProtectedRoutes path='/checked' exact component={Done} />
+
         <Route path='/404' component={NotFound} />
         <Redirect from='*' to='/404'  />
       </Switch>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { MainHeader } from '../../layout/header'
 
 export const book = () => {
@@ -28,7 +29,7 @@ export const book = () => {
                             <span className="btn btn-primary plus" >+</span>
                         </div>
                         <div className=" mt-5">
-                            <button className="btn btn-outline-primary">Book Now</button>
+                            <Link to="/checked" className="btn btn-outline-primary">Book Now</Link>
                         </div>
 
                     </div>
