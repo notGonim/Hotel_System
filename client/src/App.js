@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import { AddHotel } from "./components/admin/AddHotel";
 import { EditProfile } from "./components/admin/EditProfile";
 import { Profile } from "./components/admin/Profile";
@@ -8,6 +8,7 @@ import { book } from "./components/booking/book/book";
 import { Home } from "./components/booking/Home";
 import { HomePage } from "./components/HomePage";
 import { Hotel } from "./components/hotels/Hotel";
+import { NotFound } from "./components/layout/404";
 import { Footer } from "./components/layout/Footer";
 import { Nav } from "./components/layout/Nav";
 import { ProtectedRoutes } from "./components/routes/ProtectedRoutes";
@@ -28,7 +29,8 @@ function App() {
         <ProtectedRoutes path='/add' exact component={AddHotel} />
         <ProtectedRoutes path='/editprofile' exact component={EditProfile} />
         <ProtectedRoutes path='/book/:id' exact component={book} />
-
+        <Route path='/404' component={NotFound} />
+        <Redirect from='*' to='/404' />
       </Switch>
       <Footer />
     </Router>
