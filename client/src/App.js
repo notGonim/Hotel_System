@@ -30,7 +30,7 @@ function App() {
         <ProtectedRoutes path='/editprofile' exact component={EditProfile} />
         <ProtectedRoutes path='/book/:id' exact component={book} />
         <Route path='/404' component={NotFound} />
-        <Redirect from='*' to='/404' />
+        <Redirect from='*' to='/404'  />
       </Switch>
       <Footer />
     </Router>
